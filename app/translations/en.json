@@ -1,8 +1,11 @@
 {
+  "app.containers.Dashboard.header": "This is the Dashboard container!",
   "boilerplate.components.Footer.author.message": "Made with love by {author}.",
   "boilerplate.components.Footer.license.message": "This project is licensed under the MIT license.",
+  "boilerplate.components.Header.dashboard": "Dashboard",
   "boilerplate.components.Header.features": "Features",
   "boilerplate.components.Header.home": "Home",
+  "boilerplate.components.Header.message": "This is the header message",
   "boilerplate.containers.FeaturePage.css.header": "Features",
   "boilerplate.containers.FeaturePage.css.message": "Next generation CSS",
   "boilerplate.containers.FeaturePage.feedback.header": "Instant feedback",
