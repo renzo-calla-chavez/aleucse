@@ -1,0 +1,21 @@
+.night {
+  min-height: 100vh;
+  width: 100%;
+  background: #4B79A1;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #030406 30%, #061622);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #030406 30%, #061622); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+}
+.moon {
+  width: 60px;
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  animation: toLeft 3000s infinite;
+
+}
+@keyframes toLeft {
+  to {
+    transform: translateX(-100vw);
+  }
+}

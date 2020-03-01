@@ -1,0 +1,94 @@
+$transition-time: 500ms;
+
+.pageAnimationWrapper {
+  position: relative;
+  .page {
+    &[class$="-exit"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  z-index: 1;
+  transition: opacity $transition-time;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity $transition-time;
+}
+
+.left-enter {
+  z-index: 1;
+  transform: translate(-100%, 0);
+}
+.left-enter-active {
+  transform: translate(0, 0);
+  transition: transform $transition-time;
+}
+.left-exit {
+  transform: translate(0, 0);
+}
+.left-exit-active {
+  transform: translate(100%, 0);
+  transition: transform $transition-time;
+}
+
+.right-enter {
+  z-index: 1;
+  transform: translate(100%, 0);
+}
+.right-enter-active {
+  transform: translate(0, 0);
+  transition: transform $transition-time;
+}
+.right-exit {
+  transform: translate(0, 0);
+}
+.right-exit-active {
+  transform: translate(-100%, 0);
+  transition: transform $transition-time;
+}
+
+.down-enter {
+  z-index: 1;
+  transform: translate(0, 100%);
+}
+.down-enter-active {
+  transform: translate(0, 0);
+  transition: transform $transition-time;
+}
+.down-exit {
+  transform: translate(0, 0);
+}
+.down-exit-active {
+  transform: translate(0, -100%);
+  transition: transform $transition-time;
+}
+
+.up-enter {
+  z-index: 1;
+  transform: translate(0, -100%);
+}
+.up-enter-active {
+  transform: translate(0, 0);
+  transition: transform $transition-time;
+}
+.up-exit {
+  transform: translate(0, 0);
+}
+.up-exit-active {
+  transform: translate(0, 100%);
+  transition: transform $transition-time;
+}
+

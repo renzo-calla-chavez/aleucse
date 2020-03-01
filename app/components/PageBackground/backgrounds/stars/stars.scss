@@ -1,0 +1,95 @@
+.stars-wrapper {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+@function box-shadow($stars, $width, $heigth) {
+  $bxshadow: ();
+  @for $i from 1 to $stars {
+    $bxshadow: append($bxshadow, (random($width) + 0vw) (random($heigth) + 0vh) #fff, comma);
+  }
+  @return $bxshadow;
+}
+
+$bxshadow-large: box-shadow(80,100, 100);
+$bxshadow-medium: box-shadow(150,100, 100);
+$bxshadow-small: box-shadow(300,100, 100);
+
+.stars.large {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: $bxshadow-large;
+  animation: blink-large 7s infinite;
+}
+.stars.medium {
+  height: 2px;
+  width: 2px;
+  background: transparent;
+  box-shadow: $bxshadow-medium;
+  animation: blink-medium 5s infinite;
+}
+.stars.small {
+  height: 1px;
+  width: 1px;
+  background: transparent;
+  box-shadow: $bxshadow-small;
+  animation: blink-small 3s infinite;
+}
+
+@keyframes blink-large {
+  0% {
+    box-shadow: $bxshadow-large;
+  }
+  70% {
+    $colors: '#fff', 'transparent';
+    $stars: $bxshadow-large;
+    @for $i from 1 to length($stars) {
+      $star: set-nth(nth($stars, $i), 3, unquote(nth($colors, random(length($colors)))));
+      $stars: set-nth($stars, $i, $star);
+    }
+    box-shadow: $stars;
+  }
+  100% {
+    box-shadow: $bxshadow-large;
+  }
+}
+@keyframes blink-medium {
+  0% {
+    box-shadow: $bxshadow-medium;
+  }
+  70% {
+    $colors: '#fff', 'transparent';
+    $stars: $bxshadow-medium;
+    @for $i from 1 to length($stars) {
+      $star: set-nth(nth($stars, $i), 3, unquote(nth($colors, random(length($colors)))));
+      $stars: set-nth($stars, $i, $star);
+    }
+    box-shadow: $stars;
+  }
+  100% {
+    box-shadow: $bxshadow-medium;
+  }
+}
+@keyframes blink-small {
+  0% {
+    box-shadow: $bxshadow-small;
+  }
+  70% {
+    $colors: '#fff', 'transparent';
+    $stars: $bxshadow-small;
+    @for $i from 1 to length($stars) {
+      $star: set-nth(nth($stars, $i), 3, unquote(nth($colors, random(length($colors)))));
+      $stars: set-nth($stars, $i, $star);
+    }
+    box-shadow: $stars;
+  }
+  100% {
+    box-shadow: $bxshadow-small;
+  }
+}
+

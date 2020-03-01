@@ -1,0 +1,14 @@
+.cloud {
+  position: absolute;
+  right: -305px;
+}
+
+
+@keyframes toLeftOutside {
+  from {
+    transform: translateX(20vw);
+  }
+  to {
+    transform: translateX(-120vw);
+  }
+}

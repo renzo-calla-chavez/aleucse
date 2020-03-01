@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44.96 48.26">
+  <defs/>
+  <defs>
+    <linearGradient id="b">
+      <stop offset="0" stop-color="#f0f7ff"/>
+      <stop offset="1" stop-color="#f0f7ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="d">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="c">
+      <stop offset="0" stop-color="#ffe300"/>
+      <stop offset="1" stop-color="#ffe300" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="a">
+      <stop offset="0" stop-color="#fdfeff"/>
+      <stop offset="1" stop-color="#fdfeff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="e" x1="62.82" x2="62.56" y1="-730.2" y2="-729.87" gradientUnits="userSpaceOnUse" xlink:href="#b"/>
+    <radialGradient id="f" cx="47.02" cy="-789.57" r="22.49" fx="47.02" fy="-789.57" gradientTransform="matrix(-.70654 -.13022 .19152 -1.03909 228.12 -1601.55)" gradientUnits="userSpaceOnUse" xlink:href="#d"/>
+  </defs>
+  <path fill="url(#e)" stroke="url(#f)" stroke-opacity=".98" stroke-width="5.29" d="M65.54-794.64a21.17 21.17 0 11-41.5-5.86s2.53 5.39 6.9 9.47a24.49 24.49 0 0012.36 5.97c3.26.44 8.13.14 12.07-1.8 5.74-2.83 10.17-7.78 10.17-7.78z" transform="rotate(-64.13 687.5 -366.6)"/>
+</svg>
