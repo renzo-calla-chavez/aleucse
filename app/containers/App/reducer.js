@@ -8,7 +8,15 @@
  */
 
 import produce from 'immer';
-import { LOAD_REPOS_SUCCESS, LOAD_REPOS, LOAD_REPOS_ERROR } from './constants';
+import { getScreenSizeRedux } from '../../utils/helpers/ResizeScreenFunctions';
+
+import {
+  LOAD_REPOS,
+  LOAD_REPOS_ERROR,
+  LOAD_REPOS_SUCCESS,
+  SET_SCREEN_SIZE,
+  SET_BACKGROUND,
+} from './constants';
 
 // The initial state of the App
 export const initialState = {
@@ -18,6 +26,8 @@ export const initialState = {
   userData: {
     repositories: false,
   },
+  screenSize: getScreenSizeRedux(),
+  background: 'NightBackground',
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -39,6 +49,12 @@ const appReducer = (state = initialState, action) =>
       case LOAD_REPOS_ERROR:
         draft.error = action.error;
         draft.loading = false;
+        break;
+      case SET_SCREEN_SIZE:
+        draft.screenSize = getScreenSizeRedux(action.size);
+        break;
+      case SET_BACKGROUND:
+        draft.background = action.background;
         break;
     }
   });

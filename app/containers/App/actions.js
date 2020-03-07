@@ -15,7 +15,13 @@
  *    }
  */
 
-import { LOAD_REPOS, LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR } from './constants';
+import {
+  LOAD_REPOS,
+  LOAD_REPOS_SUCCESS,
+  LOAD_REPOS_ERROR,
+  SET_SCREEN_SIZE,
+  SET_BACKGROUND,
+} from './constants';
 
 /**
  * Load the repositories, this action starts the request saga
@@ -55,5 +61,33 @@ export function repoLoadingError(error) {
   return {
     type: LOAD_REPOS_ERROR,
     error,
+  };
+}
+
+/**
+ * Dispatched when the screen is resized
+ *
+ * @param  {string} size data, xxs,xs,sm,md,lg
+ *
+ * @return {object}  An action object with a type of SET_SCREEN_SIZE passing the new size
+ */
+export function screenSizeChanged(size) {
+  return {
+    type: SET_SCREEN_SIZE,
+    size,
+  };
+}
+
+/**
+ * Dispatched when the this actions starts the request saga
+ *
+ * @param  {string} background id
+ *
+ * @return {object}  An action object with a type of SET_BACKGROUND passing the new background
+ */
+export function setBackground(background) {
+  return {
+    type: SET_BACKGROUND,
+    background,
   };
 }

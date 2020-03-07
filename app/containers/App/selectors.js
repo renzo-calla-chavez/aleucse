@@ -39,6 +39,17 @@ const makeSelectLocation = () =>
     routerState => routerState.location,
   );
 
+const makeSelectSize = () =>
+  createSelector(
+    selectGlobal,
+    globalState => globalState.screenSize,
+  );
+const makeSelectBackground = () =>
+  createSelector(
+    selectGlobal,
+    globalState => globalState.background,
+  );
+
 export {
   selectGlobal,
   makeSelectCurrentUser,
@@ -46,4 +57,6 @@ export {
   makeSelectError,
   makeSelectRepos,
   makeSelectLocation,
+  makeSelectSize,
+  makeSelectBackground,
 };

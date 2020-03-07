@@ -12,3 +12,5 @@
 export const LOAD_REPOS = 'boilerplate/App/LOAD_REPOS';
 export const LOAD_REPOS_SUCCESS = 'boilerplate/App/LOAD_REPOS_SUCCESS';
 export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR';
+export const SET_SCREEN_SIZE = 'boilerplate/App/SET_SCREEN_SIZE';
+export const SET_BACKGROUND = 'boilerplate/App/SET_BACKGROUND';

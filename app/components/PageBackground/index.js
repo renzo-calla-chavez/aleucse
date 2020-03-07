@@ -1,22 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './background.scss';
-import NightBackground from './backgrounds/night/night';
+import BackgroundWrapper from './BackgroundWrapper';
+import { ScreenSizeContext } from './contexts';
 
-const PageBackground = ({ children }) => {
-  console.log('background set');
-  return (
-    <div>
-      <div className="background-wrapper">
-        <div className="background">
-          <NightBackground />
-        </div>
-      </div>
-      {/*<div>{children}</div>*/}
-    </div>
-  );
-};
+const PageBackground = ({ children, size, background }) => (
+  <ScreenSizeContext.Provider value={size}>
+    <BackgroundWrapper background={background} />
+    <div>{children}</div>
+  </ScreenSizeContext.Provider>
+);
 PageBackground.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.element.isRequired,
+  size: PropTypes.object,
+  background: PropTypes.string.isRequired,
 };
 export default PageBackground;

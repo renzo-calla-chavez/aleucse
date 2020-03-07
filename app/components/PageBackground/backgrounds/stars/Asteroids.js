@@ -4,7 +4,6 @@ import { randomInteger } from '../../../../utils/helpers/genericFunctions';
 import { angleDeg } from '../../../../utils/helpers/animationFunctions';
 
 const Asteriods = () => {
-  console.log('----->Asteriods rendered');
   const [p1, setP1] = useState({});
   const animationTime = 1;
   const animationDelay = 20;
@@ -14,9 +13,7 @@ const Asteriods = () => {
   useEffect(() => {
     setAsteriod();
     const interval = setInterval(() => setAsteriod(), animationDelay * 1000);
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   const p2 = {

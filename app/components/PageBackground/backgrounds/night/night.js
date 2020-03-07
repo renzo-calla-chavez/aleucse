@@ -8,7 +8,7 @@ const NightBackground = () => (
   <div className="night">
     <img src={Moon} alt="" className="moon" />
     <Stars />
-    <Clouds numberOfClouds={24} />
+    <Clouds />
   </div>
 );
 NightBackground.propTypes = {};

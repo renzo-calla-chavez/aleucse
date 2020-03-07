@@ -12,3 +12,8 @@
   left: 0;
   z-index: -1;
 }
+@keyframes toLeft {
+  to {
+    transform: translateX(-100vw);
+  }
+}

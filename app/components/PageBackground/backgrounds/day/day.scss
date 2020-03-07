@@ -1,0 +1,26 @@
+@import "../../../../styles/helper/responsiveUtils";
+.day {
+  min-height: 100vh;
+  width: 100%;
+  background: #b7eaff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%);
+  height: 100vh;
+}
+.sun {
+  width: 100px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  animation: toLeft 4000s infinite;
+  @include into-sm-md() {
+    width: 150px;
+    top: 60px;
+    right: 60px;
+  }
+  @include into-lg() {
+    width: 150px;
+    top: 80px;
+    right: 80px;
+  }
+}

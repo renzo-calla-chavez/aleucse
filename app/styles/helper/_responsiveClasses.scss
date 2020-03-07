@@ -1,0 +1,25 @@
+.hidden-xxs {
+  @include into-xxs() {
+    display: none !important;
+  }
+}
+.hidden-xs {
+  @include into-xs() {
+    display: none !important;
+  }
+}
+.hidden-sm {
+  @include into-sm() {
+    display: none !important;
+  }
+}
+.hidden-md {
+  @include into-md() {
+    display: none !important;
+  }
+}
+.hidden-lg {
+  @include into-lg() {
+    display: none !important;
+  }
+}

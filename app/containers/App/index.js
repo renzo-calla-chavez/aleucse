@@ -12,7 +12,11 @@ import styled from 'styled-components';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { makeSelectLocation } from 'containers/App/selectors';
+import {
+  makeSelectLocation,
+  makeSelectSize,
+  makeSelectBackground,
+} from 'containers/App/selectors';
 
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
@@ -24,11 +28,14 @@ import Footer from 'components/Footer';
 
 import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
+import { useInjectSaga } from 'utils/injectSaga';
 import RoutingTransition from '../../components/Transition/RoutingTransition';
 import GlobalStyle from '../../global-styles';
 import '../../styles/global.scss';
 import PageBackground from '../../components/PageBackground';
+import saga from './saga';
 
+const key = 'appRoot';
 const AppWrapper = styled.div`
   max-width: 900px;
   margin: 0 auto;
@@ -38,16 +45,19 @@ const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
-function App({ route }) {
-  // TODO: css mediaqueries, detect js mobile
-  // TODO: prevent background rendering
-  // TODO: use dinamic backbround
+function App({ route, size, background }) {
+  useInjectSaga({ key, saga });
+
+  // TODO: set Github
+  // TODO: sign in page structure
+  // TODO: set Sign in DB, facebook, google
+
   // TODO: dynamic left right routing transition
   // TODO: use theme, adding material UI
   // TODO: loading
 
   return (
-    <PageBackground>
+    <PageBackground size={size} background={background}>
       <AppWrapper>
         <Helmet
           titleTemplate="%s - React.js Boilerplate"
@@ -78,10 +88,14 @@ function App({ route }) {
 
 App.propTypes = {
   route: PropTypes.object.isRequired,
+  size: PropTypes.object.isRequired,
+  background: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
   route: makeSelectLocation(),
+  size: makeSelectSize(),
+  background: makeSelectBackground(),
 });
 
 export default connect(mapStateToProps)(App);
