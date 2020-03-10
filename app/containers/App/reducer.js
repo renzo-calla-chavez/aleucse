@@ -27,7 +27,7 @@ export const initialState = {
     repositories: false,
   },
   screenSize: getScreenSizeRedux(),
-  background: 'NightBackground',
+  background: 'DayBackground',
 };
 
 /* eslint-disable default-case, no-param-reassign */

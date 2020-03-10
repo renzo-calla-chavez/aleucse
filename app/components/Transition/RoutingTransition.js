@@ -20,7 +20,7 @@ const RoutingTransition = ({ children, route, animation }) => (
 
 RoutingTransition.propTypes = {
   route: PropTypes.object.isRequired,
-  children: PropTypes.object.isRequired,
+  children: PropTypes.any.isRequired,
   animation: PropTypes.string.isRequired,
 };
 export default RoutingTransition;

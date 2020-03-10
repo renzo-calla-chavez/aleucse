@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import NavBar from './NavBar';
@@ -6,8 +6,16 @@ import HeaderLink from './HeaderLink';
 import messages from './messages';
 
 function Header() {
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log('header mounted');
+    return () => {
+      // eslint-disable-next-line no-console
+      console.log('header unmounted');
+    };
+  }, []);
   return (
-    <div>
+    <div className="header">
       <FormattedMessage {...messages.message} />
       <NavBar>
         <HeaderLink to="/">
@@ -19,6 +27,7 @@ function Header() {
         <HeaderLink to="/dashboard">
           <FormattedMessage {...messages.dashboard} />
         </HeaderLink>
+        <HeaderLink to="/login">login</HeaderLink>
       </NavBar>
     </div>
   );

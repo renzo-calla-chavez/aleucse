@@ -92,3 +92,29 @@ $transition-time: 500ms;
   transition: transform $transition-time;
 }
 
+
+
+//.screen {
+//  position: absolute;
+//}
+//.animation-enter {
+//  transform: translateX(100%);
+//  opacity: 0;
+//}
+//
+//.animation-enter-active {
+//  transition: transform 1000ms ease-in-out, opacity 1000ms ease-in-out;
+//  transform: translateX(0%);
+//  opacity: 1;
+//}
+//
+//.animation-exit {
+//  transition: transform 1000ms ease-in-out, opacity 1000ms ease-in-out;
+//  transform: translateX(0%);
+//  opacity: 1;
+//}
+//
+//.animation-exit-active {
+//  transform: translateX(-100%);
+//  opacity: 0;
+//}

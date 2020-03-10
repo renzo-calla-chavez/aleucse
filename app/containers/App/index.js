@@ -8,57 +8,37 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
-import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import {
-  makeSelectLocation,
-  makeSelectSize,
-  makeSelectBackground,
-} from 'containers/App/selectors';
+import { makeSelectBackground, makeSelectSize } from 'containers/App/selectors';
 
-import HomePage from 'containers/HomePage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
-import DashboardPage from 'containers/Dashboard/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Header from 'components/Header';
-import Body from 'components/Body';
-import Footer from 'components/Footer';
+import AppRouter from 'containers/AppRouter';
 
 import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
 import { useInjectSaga } from 'utils/injectSaga';
-import RoutingTransition from '../../components/Transition/RoutingTransition';
 import GlobalStyle from '../../global-styles';
 import '../../styles/global.scss';
 import PageBackground from '../../components/PageBackground';
 import saga from './saga';
 
 const key = 'appRoot';
-const AppWrapper = styled.div`
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  min-height: 100vh;
-  padding: 0 16px;
-  flex-direction: column;
-`;
 
-function App({ route, size, background }) {
+function App({ size, background }) {
   useInjectSaga({ key, saga });
 
-  // TODO: set Github
+  // TODO: routing transition
+  // TODO: dynamic left right routing transition
+  // TODO: login page
   // TODO: sign in page structure
   // TODO: set Sign in DB, facebook, google
 
-  // TODO: dynamic left right routing transition
   // TODO: use theme, adding material UI
   // TODO: loading
 
   return (
     <PageBackground size={size} background={background}>
-      <AppWrapper>
+      <>
         <Helmet
           titleTemplate="%s - React.js Boilerplate"
           defaultTitle="React.js Boilerplate"
@@ -68,32 +48,19 @@ function App({ route, size, background }) {
             content="A React.js Boilerplate application"
           />
         </Helmet>
-        <Header />
-        <Body>
-          <RoutingTransition route={route} animation="up">
-            <Switch location={route}>
-              <Route exact path="/" component={HomePage} />
-              <Route path="/features" component={FeaturePage} />
-              <Route path="/dashboard" component={DashboardPage} />
-              <Route path="" component={NotFoundPage} />
-            </Switch>
-          </RoutingTransition>
-        </Body>
-        <Footer />
+        <AppRouter />
         <GlobalStyle />
-      </AppWrapper>
+      </>
     </PageBackground>
   );
 }
 
 App.propTypes = {
-  route: PropTypes.object.isRequired,
   size: PropTypes.object.isRequired,
   background: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
-  route: makeSelectLocation(),
   size: makeSelectSize(),
   background: makeSelectBackground(),
 });
