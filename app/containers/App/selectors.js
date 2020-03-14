@@ -50,8 +50,15 @@ const makeSelectBackground = () =>
     globalState => globalState.background,
   );
 
+const makeSelectAnimation = () =>
+  createSelector(
+    selectGlobal,
+    globalState => globalState.animation,
+  );
+
 export {
   selectGlobal,
+  selectRouter,
   makeSelectCurrentUser,
   makeSelectLoading,
   makeSelectError,
@@ -59,4 +66,5 @@ export {
   makeSelectLocation,
   makeSelectSize,
   makeSelectBackground,
+  makeSelectAnimation,
 };

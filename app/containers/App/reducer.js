@@ -8,6 +8,7 @@
  */
 
 import produce from 'immer';
+import { TOGGLE_ANIMATION } from '../AppRouter/Transition/DisableTransition/constants';
 import { getScreenSizeRedux } from '../../utils/helpers/ResizeScreenFunctions';
 
 import {
@@ -28,6 +29,7 @@ export const initialState = {
   },
   screenSize: getScreenSizeRedux(),
   background: 'DayBackground',
+  animation: true,
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -55,6 +57,9 @@ const appReducer = (state = initialState, action) =>
         break;
       case SET_BACKGROUND:
         draft.background = action.background;
+        break;
+      case TOGGLE_ANIMATION:
+        draft.animation = action.enable;
         break;
     }
   });

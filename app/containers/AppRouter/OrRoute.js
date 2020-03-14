@@ -1,9 +1,9 @@
 import React from 'react';
-import { matchPath } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { matchesRoute } from './routeHelpers';
 
-export function OrRoute({ children, paths = [], route: { pathname } }) {
-  const matches = paths.some(({ props }) => matchPath(pathname, props));
+export function OrRoute({ children, paths = [], route }) {
+  const matches = matchesRoute(paths, route);
   return <>{matches && children}</>;
 }
 

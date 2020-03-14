@@ -3,7 +3,7 @@ $transition-time: 500ms;
 .pageAnimationWrapper {
   position: relative;
   .page {
-    &[class$="-exit"] {
+    &[class*='-exit' ] {
       position: absolute;
       top: 0;
       left: 0;
@@ -12,36 +12,40 @@ $transition-time: 500ms;
   }
 }
 
-.fade-enter {
+.fade-enter,
+.fade-appear {
   opacity: 0;
 }
-.fade-enter-active {
+.fade-enter-active,
+.fade-appear-active {
   opacity: 1;
   z-index: 1;
-  transition: opacity $transition-time;
+  transition: opacity $transition-time ease-in;
 }
 .fade-exit {
   opacity: 1;
 }
 .fade-exit-active {
   opacity: 0;
-  transition: opacity $transition-time;
+  transition: opacity $transition-time ease-in;
 }
 
-.left-enter {
-  z-index: 1;
+.left-enter,
+.left-appear {
   transform: translate(-100%, 0);
+  z-index: 1;
 }
-.left-enter-active {
+.left-enter-active,
+.left-appear-active {
   transform: translate(0, 0);
-  transition: transform $transition-time;
+  transition: transform $transition-time ease-in;
 }
 .left-exit {
   transform: translate(0, 0);
 }
 .left-exit-active {
   transform: translate(100%, 0);
-  transition: transform $transition-time;
+  transition: transform $transition-time ease-in;
 }
 
 .right-enter {
@@ -50,14 +54,14 @@ $transition-time: 500ms;
 }
 .right-enter-active {
   transform: translate(0, 0);
-  transition: transform $transition-time;
+  transition: transform $transition-time ease-in;
 }
 .right-exit {
   transform: translate(0, 0);
 }
 .right-exit-active {
   transform: translate(-100%, 0);
-  transition: transform $transition-time;
+  transition: transform $transition-time ease-in;
 }
 
 .down-enter {
@@ -66,14 +70,14 @@ $transition-time: 500ms;
 }
 .down-enter-active {
   transform: translate(0, 0);
-  transition: transform $transition-time;
+  transition: transform $transition-time ease-in;
 }
 .down-exit {
   transform: translate(0, 0);
 }
 .down-exit-active {
   transform: translate(0, -100%);
-  transition: transform $transition-time;
+  transition: transform $transition-time ease-in;
 }
 
 .up-enter {
@@ -82,39 +86,12 @@ $transition-time: 500ms;
 }
 .up-enter-active {
   transform: translate(0, 0);
-  transition: transform $transition-time;
+  transition: transform $transition-time ease-in;
 }
 .up-exit {
   transform: translate(0, 0);
 }
 .up-exit-active {
   transform: translate(0, 100%);
-  transition: transform $transition-time;
+  transition: transform $transition-time ease-in;
 }
-
-
-
-//.screen {
-//  position: absolute;
-//}
-//.animation-enter {
-//  transform: translateX(100%);
-//  opacity: 0;
-//}
-//
-//.animation-enter-active {
-//  transition: transform 1000ms ease-in-out, opacity 1000ms ease-in-out;
-//  transform: translateX(0%);
-//  opacity: 1;
-//}
-//
-//.animation-exit {
-//  transition: transform 1000ms ease-in-out, opacity 1000ms ease-in-out;
-//  transform: translateX(0%);
-//  opacity: 1;
-//}
-//
-//.animation-exit-active {
-//  transform: translateX(-100%);
-//  opacity: 0;
-//}
