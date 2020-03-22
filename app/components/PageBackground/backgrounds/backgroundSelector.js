@@ -13,6 +13,6 @@ export const getBackgroundComponent = bg => {
     case 'DayBackground':
       return DayBackground;
     default:
-      return NightBackground;
+      return '';
   }
 };

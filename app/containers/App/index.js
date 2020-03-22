@@ -27,12 +27,11 @@ const key = 'appRoot';
 function App({ size, background }) {
   useInjectSaga({ key, saga });
 
-  // TODO: routing transition
-  // TODO: dynamic left right routing transition
   // TODO: login page
   // TODO: sign in page structure
+  // TODO: header and footer animation
+  // TODO: dynamic left right routing transition
   // TODO: set Sign in DB, facebook, google
-
   // TODO: use theme, adding material UI
   // TODO: loading
 

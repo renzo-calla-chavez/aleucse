@@ -1,0 +1,16 @@
+.loginPage {
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .lolo {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+  .welcome {
+    margin: 10px;
+    font-size: 2em;
+    display: none;
+  }
+}

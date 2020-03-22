@@ -1,5 +1,8 @@
 {
   "app.containers.Dashboard.header": "",
+  "app.containers.LoginPage.welcome": "Bienvenidos",
+  "app.containers.LoginPage.forgot": "Olvido su contraseña?",
+  "app.containers.LoginPage.signUp": "Registrate",
   "boilerplate.components.Footer.author.message": "",
   "boilerplate.components.Footer.license.message": "",
   "boilerplate.components.Header.dashboard": "Tablero",

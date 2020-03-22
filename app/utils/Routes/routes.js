@@ -1,4 +1,5 @@
 import LoginPage from 'containers/Auth/LoginPage/Loadable';
+import SignUpPage from 'containers/Auth/SignUpPage/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
 import DashboardPage from 'containers/Dashboard/Loadable';
@@ -11,6 +12,13 @@ const routes = [
     props: {
       path: paths.login,
       component: LoginPage,
+    },
+  },
+  {
+    id: 'signUp',
+    props: {
+      path: paths.signUp,
+      component: SignUpPage,
     },
   },
   {

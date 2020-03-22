@@ -1,15 +1,15 @@
 // responsive variables
 
-$screen-xs:                  480px !default;
+$screen-xs:                  600px !default;
 $screen-xs-min:              $screen-xs !default;
 
-$screen-sm:                  768px !default;
+$screen-sm:                  960px !default;
 $screen-sm-min:              $screen-sm !default;
 
-$screen-md:                  1024px !default;
+$screen-md:                  1280px !default;
 $screen-md-min:              $screen-md !default;
 
-$screen-lg:                  1440px !default;
+$screen-lg:                  1920px !default;
 $screen-lg-min:              $screen-lg !default;
 
 $screen-xxs-max:             ($screen-xs-min - 1) !default;

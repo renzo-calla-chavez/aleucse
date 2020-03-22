@@ -5,6 +5,8 @@ import { getBackgroundComponent } from './backgrounds/backgroundSelector';
 
 const BackgroundWrapper = React.memo(({ background }) => {
   const Background = getBackgroundComponent(background);
+  if (!Background) return null;
+
   return (
     <div className="background-wrapper">
       <div className="background">

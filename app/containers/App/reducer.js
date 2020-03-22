@@ -28,7 +28,7 @@ export const initialState = {
     repositories: false,
   },
   screenSize: getScreenSizeRedux(),
-  background: 'DayBackground',
+  background: '',
   animation: true,
 };
 

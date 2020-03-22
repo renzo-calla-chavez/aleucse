@@ -1,5 +1,8 @@
 {
   "app.containers.Dashboard.header": "This is the Dashboard container!",
+  "app.containers.LoginPage.welcome": "Welcome",
+  "app.containers.LoginPage.forgot": "Forgot your password?",
+  "app.containers.LoginPage.signUp": "Sign Up",
   "boilerplate.components.Footer.author.message": "Made with love by {author}.",
   "boilerplate.components.Footer.license.message": "This project is licensed under the MIT license.",
   "boilerplate.components.Header.dashboard": "Dashboard",
